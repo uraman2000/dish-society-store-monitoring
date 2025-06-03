@@ -101,12 +101,12 @@ function UploadXLSX({ setFormattedData }) {
     const json = XLSX.utils.sheet_to_json(worksheet);
     const formatted = formatData(json);
 
-        // console.log("lateCheck", findLateCheck(formatted));
+    // console.log("lateCheck", findLateCheck(formatted));
 
-        // console.log(
-        //   "missingReportsPerStore",
-        //   getMissingReportsPerStore(checklist, formatted, stores)
-        // );
+    // console.log(
+    //   "missingReportsPerStore",
+    //   getMissingReportsPerStore(checklist, formatted, stores)
+    // );
 
     setFormattedData({
       lateCheck: findLateCheck(formatted),
@@ -159,9 +159,15 @@ function UploadXLSX({ setFormattedData }) {
 
       {/* Date Input */}
       <div className="w-full max-w-xs">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-gray-700 ">
           Select Date (mm/dd/yy)
         </label>
+        <p className="text-red-500 text-sm  italic">
+          *areng date ay walang 0 sa simula ha!! wag tanga!!
+        </p>
+        <p className="text-red-500 text-sm mb-2 italic">
+          *date muna bago lagay ng file ha!
+        </p>
         <div className="relative">
           <input
             type="text"
